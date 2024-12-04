@@ -7,6 +7,7 @@ with open("day2p1input.txt") as file:
 #seperate column and turn into integers
 counter = 0
 
+
 for i in lines:
     linecols = i.split(" ")
         
@@ -22,14 +23,17 @@ for i in lines:
     lineready
 
     # rules met? Counter = counter + 1
-
+    points = 0
     #check if the numbers in the row are all desending
     success = True
     for i in range(len(lineready)-1):
         if lineready[i] - lineready[i+1] < 1 or lineready[i] - lineready[i+1] > 3:
             print('breaking because ', lineready[i] , lineready[i+1])
-            success = False
-            break
+            points = points + 1
+
+    if points:
+        points > 1
+        success = False
 
     if success:
         counter = counter + 1

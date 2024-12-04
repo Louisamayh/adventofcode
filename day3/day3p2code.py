@@ -6,13 +6,15 @@ text = "".join(lines)
 #import regex
 import re
 
-# create pattern to be regonised
-pattern = r"mul\(([1-9]?[0-9]{1,2}|0),([1-9]?[0-9]{1,2}|0)\)"\
+# update pattern to pull for don't() and do()
+pattern = r"(?:mul\(([1-9]?[0-9]{1,2}|0),([1-9]?[0-9]{1,2}|0)\)|don't\(\)|do\(\))"
 
 # find pattern in text
 # extract contents of brackets to list
 
 matches = re.findall(pattern,text)
+
+print(matches)
 
 #convert to integers
 #multiply the integers before the comma by the integers after the comma
